@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      flash[:sucess] = "Welcome to Stanley's Blog #{@user.username}"
+      flash[:sucess] = "Welcome to the Alpha Blog #{@user.username}"
       redirect_to articles_path
     else
       render 'new'
@@ -26,6 +26,10 @@ class UsersController < ApplicationController
     else
       render 'edit'
     end
+  end
+  
+  def show
+    @user = User.find(params[:id])
   end
   
   private 
