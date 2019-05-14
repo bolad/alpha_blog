@@ -3,7 +3,7 @@ class User < ApplicationRecord
   include Gravtastic
   gravtastic
    
-  has_many :articles
+  has_many :articles, dependent: :destroy
   #set email to downcase at the database layer
   before_save {self.email = email.downcase}
   validates :username, 
