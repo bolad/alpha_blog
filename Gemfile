@@ -76,3 +76,5 @@ group :production do
   gem 'pg'
   
 end
+
+gem 'rails-controller-testing'
